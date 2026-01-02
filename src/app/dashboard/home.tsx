@@ -1,31 +1,40 @@
 import { DashboardLayout } from "@/components/dashboard-layout"
+import ChartPenjualan from "@/components/ui/chartPenjualan"
+import ChartDapur from "@/components/ui/chartDapur"
+import ChartKeuangan from "@/components/ui/chartKeuangan"
 
 export default function HomePage() {
     return (
         <DashboardLayout breadcrumbPage="Beranda Utama">
-            <div className="flex flex-1 flex-col gap-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                    <div className="bg-muted/50 flex flex-col items-center justify-center aspect-video rounded-xl border p-4">
-                        <h3 className="text-lg font-semibold">Statistik Inventaris</h3>
-                        <p className="text-muted-foreground text-sm">Data tersinkronasi dengan database</p>
+            <div className="flex flex-1 flex-col gap-6 p-4 sm:p-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <div className="flex flex-col rounded-2xl border bg-white shadow-sm p-4 h-[300px] sm:h-auto sm:aspect-video">
+                        <h3 className="text-sm font-semibold text-neutral-500 mb-4 px-2">Statistik Penjualan</h3>
+                        <div className="flex-1 w-full">
+                            <ChartPenjualan />
+                        </div>
                     </div>
-                    <div className="bg-muted/50 flex flex-col items-center justify-center aspect-video rounded-xl border p-4">
-                        <h3 className="text-lg font-semibold">Pesanan Dapur</h3>
-                        <p className="text-muted-foreground text-sm">Pantau pesanan secara real-time</p>
+                    <div className="flex flex-col rounded-2xl border bg-white shadow-sm p-4 h-[300px] sm:h-auto sm:aspect-video">
+                        <h3 className="text-sm font-semibold text-neutral-500 mb-4 px-2">Aktivitas Dapur</h3>
+                        <div className="flex-1 w-full">
+                            <ChartDapur />
+                        </div>
                     </div>
-                    <div className="bg-muted/50 flex flex-col items-center justify-center aspect-video rounded-xl border p-4">
-                        <h3 className="text-lg font-semibold">Laporan Keuangan</h3>
-                        <p className="text-muted-foreground text-sm">Ringkasan harian sistem MBG</p>
+                    <div className="flex flex-col rounded-2xl border bg-white shadow-sm p-4 h-[300px] sm:h-auto sm:aspect-video">
+                        <h3 className="text-sm font-semibold text-neutral-500 mb-4 px-2">Arus Keuangan</h3>
+                        <div className="flex-1 w-full">
+                            <ChartKeuangan />
+                        </div>
                     </div>
                 </div>
-                <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min p-6 border">
-                    <h2 className="text-2xl font-bold mb-4">Selamat Datang di Management System MBG</h2>
-                    <p className="text-muted-foreground">
-                        Gunakan sidebar di sebelah kiri untuk menavigasi modul yang tersedia.
-                        Semua data yang Anda inputkan akan langsung tersimpan di sistem backend kami.
-                    </p>
+
+                <div className="min-h-[400px] flex-1 rounded-2xl p-8 border bg-white shadow-sm">
+                    <div>
+                        <h2 className="text-3xl text-center justify-center py-auto font-bold tracking-tight text-neutral-900 mb-4">pas di isi karo tabel GIZI ?</h2>
+                    </div>
                 </div>
             </div>
         </DashboardLayout>
     )
 }
+
